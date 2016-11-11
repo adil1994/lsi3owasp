@@ -70,7 +70,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-                <li><a href="Admin/index.html" >Administration</a></li>
+                <li><a href="admin/index.html" >Administration</a></li>
             </ul>
 
         </div>
