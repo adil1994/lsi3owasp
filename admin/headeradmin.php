@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="../css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="../css/custom.min.css">
+
 </head>
+
 
 <body>
 <div class="navbar navbar-default navbar-fixed-top">
@@ -86,15 +88,6 @@
                     <a class="list-group-item" href="#dialogs">Dialogs</a>
                 </div>
             </div>
-
-            <div class="col-lg-9 col-md-9 col-sm-8">
-                <h2> Application Backup in progress please wait ...</h2>
-                <br>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar" style="width: 45%"></div>
-                </div>
-            </div>
-
         </div>
     </div>
 
