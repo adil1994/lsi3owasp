@@ -23,7 +23,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="../" class="navbar-brand">LSI 3 OWASP</a>
+            <a href="index.html" class="navbar-brand">LSI 3 OWASP</a>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -33,26 +33,16 @@
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="press.php" id="themes">Press <span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="themes">
-                        <li><a href="../default/">Default</a></li>
-                        <li class="divider"></li>
-                        <li><a href="../cerulean/">Cerulean</a></li>
-                        <li><a href="../cosmo/">Cosmo</a></li>
-                        <li><a href="../cyborg/">Cyborg</a></li>
-                        <li><a href="../darkly/">Darkly</a></li>
-                        <li><a href="../flatly/">Flatly</a></li>
-                        <li><a href="../journal/">Journal</a></li>
-                        <li><a href="../lumen/">Lumen</a></li>
-                        <li><a href="../paper/">Paper</a></li>
-                        <li><a href="../readable/">Readable</a></li>
-                        <li><a href="../sandstone/">Sandstone</a></li>
-                        <li><a href="../simplex/">Simplex</a></li>
-                        <li><a href="../slate/">Slate</a></li>
-                        <li><a href="../spacelab/">Spacelab</a></li>
-                        <li><a href="../superhero/">Superhero</a></li>
-                        <li><a href="../united/">United</a></li>
-                        <li><a href="../yeti/">Yeti</a></li>
+                        <li><a href="press.php">All</a></li>
+                        <li><a href="../paper/">Sport</a></li>
+                        <li><a href="../readable/">Politics</a></li>
+                        <li><a href="../sandstone/">Economie</a></li>
+                        <li><a href="../simplex/">International</a></li>
+                        <li><a href="../slate/">Europe</a></li>
+                        <li><a href="../spacelab/">Africa</a></li>
+                        <li><a href="../superhero/">America</a></li>
                     </ul>
                 </li>
                 <li>
@@ -80,7 +70,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-                <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+                <li><a href="admin/index.html" >Administration</a></li>
             </ul>
 
         </div>
@@ -115,12 +105,7 @@
             <div class="col-lg-9 col-md-9 col-ms-8">
                 <table class="table table-hover">
                     <tr>
-                        <th>#</th>
-                        <th>image</th>
-                        <th>title</th>
-                        <th>creation date</th>
-                        <th>modification date</th>
-                        <th>author</th>
+
                     </tr>
 
                     <?php
@@ -137,19 +122,27 @@
                             while ($article=$articles->fetch())
                             {
                                 echo '<tr>';
-                                echo '<td>'.$num.'</td>';
-                                echo '<td>  <img style="width: 250px;" src="'.$article["image"].'" alt="press_image"></td>';
-                                echo '<td>'.$article["titre"].'</td>';
-                                echo '<td>'.substr($article["contenu"], 0, 100).'... <a href="#!">learn more</a></td>';
-                                echo '<td>'.$article["date_creation"].'</td>';
-                                echo '<td>'.$article["date_modification"].'</td>';
+                                echo '<td>  <img style="width: 250px; height: 150px;" src="'.$article["image"].'" alt="press_image"></td>';
+                                echo '<td><h4><a href="press.php?id='.$article["id_article"].'">'.$article["titre"].'</h4></a><h6>'.$article["date_creation"].'</h6>';
+                                echo ''.substr($article["contenu"], 0, 200).' ...';
+                                echo '</td>';
                                 echo '</tr>';
                                 $num++;
                             }
                         }
                     ?>
-
                 </table>
+                <center>
+                <ul class="pagination pagination-sm">
+                    <li class="disabled"><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+                </center>
             </div>
         </div>
     </div>
