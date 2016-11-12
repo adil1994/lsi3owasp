@@ -36,6 +36,7 @@ if( strcmp($_SESSION['login'],'0') == 0 ){
                 <p class="lead">security for begginers</p>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4">
                 <?php

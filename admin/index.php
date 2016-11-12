@@ -25,6 +25,7 @@ include("../includes/headeradmin.php");
                 <p class="lead">security for begginers</p>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <table class="table table-hover">
