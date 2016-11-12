@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if( strcmp($_SESSION['login'],'0') == 0 ){
+    header('location:admin/login.php');
+}
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,61 +23,69 @@
 </head>
 <body>
 
-<?php include("header.html");
+<?php include("includes/header.html");
 ?>
+
+
 <div class="container">
 
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-6">
-                <h1>Darkly</h1>
-                <p class="lead">Flatly in night mode</p>
+                <h1>LSI3 OWASP</h1>
+                <p class="lead">security for begginers</p>
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4">
-                <div class="list-group table-of-contents">
-                    <a class="list-group-item" href="./press.php">press articles</a>
-                    <a class="list-group-item" href="#buttons">Gallery</a>
-                    <a class="list-group-item" href="#typography">Typography</a>
-                    <a class="list-group-item" href="#tables">Tables</a>
-                    <a class="list-group-item" href="#forms">Forms</a>
-                    <a class="list-group-item" href="#navs">Navs</a>
-                    <a class="list-group-item" href="#indicators">Indicators</a>
-                    <a class="list-group-item" href="#progress-bars">Progress bars</a>
-                    <a class="list-group-item" href="#containers">Containers</a>
-                    <a class="list-group-item" href="#dialogs">Dialogs</a>
-                </div>
+                <?php
+                include 'includes/sidemenu.php';
+                ?>
             </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-8">
+                <table class="table table-hover">
+                    <tr>
+
+                    </tr>
+
+                    <?php
+                    try{
+                        $bdd = new PDO('mysql:host=localhost;dbname=lsi3owasp;charset=utf8', 'root', '');
+                    }
+                    catch(Exception $e) {
+                        die('Erreur : '.$e->getMessage());
+                    }
+
+                    $articles=$bdd->query("select * from article");
+                    if($articles->rowCount() > 0) {
+                        $num = 1;
+                        while ($article=$articles->fetch())
+                        {
+                            echo '<tr>';
+                            echo '<td>  <img style="width: 250px; height: 150px;" src="'.$article["image"].'" alt="press_image"></td>';
+                            echo '<td><h4><a href="press.php?id='.$article["id_article"].'">'.$article["titre"].'</h4></a><h6>'.$article["date_creation"].'</h6>';
+                            echo ''.substr($article["contenu"], 0, 200).' ...';
+                            echo '</td>';
+                            echo '</tr>';
+                            $num++;
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
+
+
         </div>
     </div>
-
-
-
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-
-                <ul class="list-unstyled">
-                    <li class="pull-right"><a href="#top">Back to top</a></li>
-                    <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
-                    <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
-                    <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
-                    <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
-                    <li><a href="../help/#api">API</a></li>
-                    <li><a href="../help/#support">Support</a></li>
-                </ul>
-                <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="/cdn-cgi/l/email-protection#1d697572707c6e5d7f7272696e6a7c697e75337e7270"><span class="__cf_email__" data-cfemail="8cf8e4e3e1edffcceee3e3f8fffbedf8efe4a2efe3e1">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>.</p>
-                <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
-                <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
-
-            </div>
-        </div>
-
-    </footer>
-
-
 </div>
+
+<?php include("includes/footer.php");
+?>
+
+
+
 
 </body>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
