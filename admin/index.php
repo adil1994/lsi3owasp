@@ -50,7 +50,7 @@ include("../includes/headeradmin.php");
                         {
                             echo '<tr>';
                             echo '<td>  <img style="width: 200px; height: 100px;" src="'.$article["image"].'" alt="press_image"></td>';
-                            echo '<td><a href="press.php?id='.$article["id_article"].'">'.substr($article["titre"],0,50).'...</a></td>';
+                            echo '<td><a href="../press.php?id='.$article["id_article"].'">'.substr($article["titre"],0,50).'...</a></td>';
                             echo '<td>'.substr($article["contenu"], 0, 50).' ...</td>';
                             echo '<td><button class="btn btn-danger">Supprimer</button>&nbsp;&nbsp;<button class="btn btn-warning">Modifier</button></td>';
                             echo '</tr>';

@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if( strcmp($_SESSION['login'],'0') == 0 ){
+    header('location:admin/login.php');
+}
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,25 +32,50 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-6">
-                <h1>Darkly</h1>
-                <p class="lead">Flatly in night mode</p>
+                <h1>LSI3 OWASP</h1>
+                <p class="lead">security for begginers</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4">
-                <div class="list-group table-of-contents">
-                    <a class="list-group-item" href="./press.php">press articles</a>
-                    <a class="list-group-item" href="#buttons">Gallery</a>
-                    <a class="list-group-item" href="#typography">Typography</a>
-                    <a class="list-group-item" href="#tables">Tables</a>
-                    <a class="list-group-item" href="#forms">Forms</a>
-                    <a class="list-group-item" href="#navs">Navs</a>
-                    <a class="list-group-item" href="#indicators">Indicators</a>
-                    <a class="list-group-item" href="#progress-bars">Progress bars</a>
-                    <a class="list-group-item" href="#containers">Containers</a>
-                    <a class="list-group-item" href="#dialogs">Dialogs</a>
-                </div>
+                <?php
+                include 'includes/sidemenu.php';
+                ?>
             </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-8">
+                <table class="table table-hover">
+                    <tr>
+
+                    </tr>
+
+                    <?php
+                    try{
+                        $bdd = new PDO('mysql:host=localhost;dbname=lsi3owasp;charset=utf8', 'root', '');
+                    }
+                    catch(Exception $e) {
+                        die('Erreur : '.$e->getMessage());
+                    }
+
+                    $articles=$bdd->query("select * from article");
+                    if($articles->rowCount() > 0) {
+                        $num = 1;
+                        while ($article=$articles->fetch())
+                        {
+                            echo '<tr>';
+                            echo '<td>  <img style="width: 250px; height: 150px;" src="'.$article["image"].'" alt="press_image"></td>';
+                            echo '<td><h4><a href="press.php?id='.$article["id_article"].'">'.$article["titre"].'</h4></a><h6>'.$article["date_creation"].'</h6>';
+                            echo ''.substr($article["contenu"], 0, 200).' ...';
+                            echo '</td>';
+                            echo '</tr>';
+                            $num++;
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
+
+
         </div>
     </div>
 </div>
