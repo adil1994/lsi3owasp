@@ -1,7 +1,11 @@
 <?php
 
 session_start();
-if( strcmp($_SESSION['login'],'0') == 0 ){
+
+if(!isset($_SESSION['login']))
+    header('location:admin/login.php');
+
+if( strcmp($_SESSION['login'],'0')==0){
     header('location:admin/login.php');
 }
 ?>

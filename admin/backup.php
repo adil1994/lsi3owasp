@@ -14,7 +14,7 @@
 
         $apppath = exec('cd .. &&  pwd');
         $command = $command.' '.$_POST['destination'].' '.$apppath;
-        echo '<h1>'.exec($command).'</h1>';
+        $outputverbose = shell_exec($command);
     }
 
 ?>
@@ -77,7 +77,9 @@ include("../includes/headeradmin.php");
             if(isset($_POST['verbose']) && $_POST['verbose']) {
         ?>
                 <div class="well">
-                    Verbose to be shown here
+                    <p>
+                        <pre><?php echo $outputverbose; ?></pre>
+                    </p>
                 </div>
         <?php
             }
