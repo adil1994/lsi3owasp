@@ -1,26 +1,5 @@
 <?php
     session_start();
-
-    try{
-        $bdd = new PDO('mysql:host=localhost;dbname=lsi3owasp;charset=utf8', 'root', '');
-    }
-    catch(Exception $e) {
-        die('Erreur : '.$e->getMessage());
-    }
-
-    // low security
-    if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 0 ){
-        if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
-            $query="INSERT INTO article (titre,contenu,image,date_creation,date_modification,id_auteur) VALUES ( '".$_POST["title"]."', '".$_POST["content"]."', '".$_POST["image"]."', '".Date("y-m-d H:m:s")."', '".Date("y-m-d H:m:s")."', '".$_SESSION["id_user"]."')";
-            $bdd->query($query);
-        }
-    }
-    // high security
-    if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 1 ){
-
-        // TODO HIGHT SECURITY no vulnerability found !
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -54,10 +33,35 @@ include("../includes/headeradmin.php");
             <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"> new article</h3>
+                    <h3 class="panel-title"> new article <?php   ?></h3>
                     <h6 class="">fill up the boxes bellow to add a new article : <?php   ?></h6>
                 </div>
                 <div class="panel-body">
+
+                    <?php
+
+                        try{
+                            $bdd = new PDO('mysql:host=localhost;dbname=lsi3owasp;charset=utf8', 'root', '');
+                        }
+                        catch(Exception $e) {
+                            die('Erreur : '.$e->getMessage());
+                        }
+
+                        // low security
+                        if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 0 ){
+                            if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
+                                $query="INSERT INTO article (titre,contenu,image,date_creation,date_modification,id_auteur) VALUES ( '".$_POST["title"]."', '".$_POST["content"]."', '".$_POST["image"]."', '".Date("y-m-d H:m:s")."', '".Date("y-m-d H:m:s")."', '".$_SESSION["id_user"]."')";
+                                $bdd->query($query);
+                            }
+                        }
+
+                        // high security
+                        if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 1 ){
+
+                            // TODO HIGHT SECURITY
+                        }
+
+                    ?>
                     <form class="form-horizontal" action="add.php" method="post">
                         <div class="form-group">
                             <label for="inputTitle" class="col-lg-2 control-label">Title :</label>
@@ -103,23 +107,22 @@ include("../includes/footer.php");
 <script type="text/javascript" >
 
     $('form').submit(function () {
-
-        // check if all inputs was filled up
-        if($('input[name=title]').val()!='' && $('textarea[name=content]').val()!='' && $('input[name=image]').val()!='' )
-        {
-            // use ajax to avoid page refresh when submit
+        if($('input[name=title]').val()!='' && $('textarea[name=content]').val()!='' && $('input[name=image]').val()!='' ) {
             $.ajax({
-                type    : 'post',
-                url     : 'add.php',
-                data    : $(this).serialize(),
-                success : function(result){
+                type: 'post',
+                url: 'add.php',
+                data: $(this).serialize(),
+                success: function (result) {
                     $("#messageAlert").html('<button onclick="closeAlert(this)" type="button" class="close">&times;</button><p> article added successfuly </p>').slideDown();
                     $('input[name=title]').val('');
                     $('textarea[name=content]').val('');
                     $('input[name=image]').val('');
                 }
             });
+            return false;
+        }
         else
+        {
             $("#messageAlert").html('<button onclick="closeAlert(this)" type="button" class="close">&times;</button><p> please fill up all the boxes with some content  </p>').slideDown();
             return false;
         }

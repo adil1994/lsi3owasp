@@ -13,7 +13,18 @@
 
 <?php
 
+session_start();
 include("../includes/headeradmin.php");
+
+
+
+try{
+    $bdd = new PDO('mysql:host=localhost;dbname=lsi3owasp;charset=utf8', 'root', '');
+}
+catch(Exception $e) {
+    die('Erreur : '.$e->getMessage());
+}
+
 ?>
 
 <div class="container">
@@ -46,16 +57,23 @@ include("../includes/headeradmin.php");
 
                     $articles=$bdd->query("select * from article");
                     if($articles->rowCount() > 0) {
-                        $num = 1;
                         while ($article=$articles->fetch())
                         {
                             echo '<tr>';
                             echo '<td>  <img style="width: 200px; height: 100px;" src="'.$article["image"].'" alt="press_image"></td>';
                             echo '<td><a href="../press.php?id='.$article["id_article"].'">'.substr($article["titre"],0,50).'...</a></td>';
                             echo '<td>'.substr($article["contenu"], 0, 50).' ...</td>';
-                            echo '<td><button class="btn btn-danger">Supprimer</button>&nbsp;&nbsp;<button class="btn btn-warning">Modifier</button></td>';
-                            echo '</tr>';
-                            $num++;
+                    ?>
+                            <td>
+                                <form method="POST" action="index.php">
+                                    <input type="hidden" name="id_article" value="<?php echo $article["id_article"]?>" >
+                                    <input onclick="deleteArticle(this)" class="btn btn-danger" name="delete" type="submit" value="delete">&nbsp;&nbsp;
+                                    <input class="btn btn-warning" name="edit" type="submit" value="edit">
+                                </form>
+                            </td>
+                            </tr>
+
+                    <?php
                         }
                     }
                     ?>
@@ -72,12 +90,44 @@ include("../includes/headeradmin.php");
 
 <?php
 include("../includes/footer.php");
+
+
+if(isset($_POST["id_article"])){
+
+    // low security
+    echo "hamzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\n\n\n\nhazmzaaaaaaa";
+    if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 0 ){
+        $query="delete from article WHERE id_article=".$_POST["id_article"];
+        $bdd->exec($query);
+        //   die();
+    }
+}
+
 ?>
-
-</div>
-
-
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+        function deleteArticle(caller){
+            alert("Caller is ===> "+caller);
+            $(caller).parent().submit(function () {
+                $.ajax({
+                    type: 'post',
+                    url: 'index.php',
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $(caller).parents('tr').fadeOut();
+                    },
+                    error : function(result){
+                        alert(result);
+                    },
+                });
+                return false;
+            });
+        }
+</script>
+
+
+
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/custom.js"></script>
 <script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
