@@ -49,10 +49,8 @@ if( strcmp($_SESSION['login'],'0')==0){
             </div>
 
             <div class="col-lg-9 col-md-9 col-sm-8">
-                <table class="table table-hover">
-                    <tr>
+                <div style="display:inline;" class="table table-hover">
 
-                    </tr>
 
                     <?php
                     try{
@@ -64,20 +62,22 @@ if( strcmp($_SESSION['login'],'0')==0){
 
                     $articles=$bdd->query("select * from article");
                     if($articles->rowCount() > 0) {
-                        $num = 1;
                         while ($article=$articles->fetch())
                         {
-                            echo '<tr>';
-                            echo '<td>  <img style="width: 250px; height: 150px;" src="'.$article["image"].'" alt="press_image"></td>';
-                            echo '<td><h4><a href="press.php?id='.$article["id_article"].'">'.$article["titre"].'</h4></a><h6>'.$article["date_creation"].'</h6>';
-                            echo ''.substr($article["contenu"], 0, 200).' ...';
-                            echo '</td>';
-                            echo '</tr>';
-                            $num++;
+                            echo '<div style="display:inline-block" >';
+                            echo '<div style="float:left;margin-right:25px;margin-bottom: 15px;">  <img style="width: 250px; height: 150px;" src="'.$article["image"].'" alt="press_image"></div>';
+                            echo '<div style="clear:right;" ><h4><a href="press.php?id='.$article["id_article"].'">'.$article["titre"].'</h4></a><h6>'.$article["date_creation"].'</h6>';
+                            echo '<p>'.substr($article["contenu"], 0, 200).' ...</p>';
+
+                            echo '</div>';
+                            //echo '<hr style="clear:left;" >';
+                            echo '</div>';
+
+
                         }
                     }
                     ?>
-                </table>
+                </div>
             </div>
 
 

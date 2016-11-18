@@ -59,7 +59,7 @@ if(isset($_POST['login']) and isset($_POST['password']))
     if($_SESSION["niveau"]==0){
 
 
-        $requet = $bdd->query('SELECT nom , prenom FROM user WHERE username=\'' . $login . '\' AND password=\'' . $pwd .'\'') or die(print_r($bdd->errorInfo()));
+        $requet = $bdd->query('SELECT id,nom , prenom FROM user WHERE username=\'' . $login . '\' AND password=\'' . $pwd .'\'') or die(print_r($bdd->errorInfo()));
 
         $existe = count($requet->fetchAll());
 
@@ -67,7 +67,9 @@ if(isset($_POST['login']) and isset($_POST['password']))
         {
 
             $_SESSION['login']= $login;
-            $_SESSION['password'] = $pwd;
+            $_SESSION['login']= $login;
+            $_SESSION['password'] = $pwd;// TODO why this line ?
+
             header('location:index.php');
 
         }

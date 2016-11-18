@@ -35,7 +35,48 @@ include("../includes/headeradmin.php");
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> new article <?php   ?></h3>
+                    <h6 class="">fill the boxes bellow to add a new article : <?php   ?></h6>
+                </div>
+                <div class="panel-body">
 
+                    <?php
+                        // user hit addd button
+                        if(isset($_POST["add"])){
+                            if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
+
+                            }
+                        }
+                    ?>
+                    <form class="form-horizontal" action="add.php" method="post">
+                        <div class="form-group">
+                            <label for="inputTitle" class="col-lg-2 control-label">Title :</label>
+                            <div class="col-lg-10">
+                                <input name="title" class="form-control" id="inputTitle" placeholder="title of article" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputContent" class="col-lg-2 control-label">Content :</label>
+                            <div class="col-lg-10">
+                                <input name="content" class="form-control" id="inputContent" placeholder="content of article" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImage" class="col-lg-2 control-label">Image :</label>
+                            <div class="col-lg-10">
+                                <input name="image" class="form-control" id="inputImage" placeholder="image URL" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button name="add" type="submit" class="btn btn-primary">Add </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             </div>
 
         </div>
