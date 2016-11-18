@@ -18,7 +18,7 @@
     // high security
     if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 1 ){
 
-        // TODO HIGHT SECURITY
+        // TODO HIGHT SECURITY no vulnerability found !
     }
 
 ?>
