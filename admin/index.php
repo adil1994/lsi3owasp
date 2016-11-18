@@ -93,13 +93,10 @@ include("../includes/footer.php");
 
 
 if(isset($_POST["id_article"])){
-
     // low security
-    echo "hamzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\n\n\n\nhazmzaaaaaaa";
     if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 0 ){
         $query="delete from article WHERE id_article=".$_POST["id_article"];
         $bdd->exec($query);
-        //   die();
     }
 }
 
@@ -108,7 +105,6 @@ if(isset($_POST["id_article"])){
 <script type="text/javascript">
 
         function deleteArticle(caller){
-            alert("Caller is ===> "+caller);
             $(caller).parent().submit(function () {
                 $.ajax({
                     type: 'post',
