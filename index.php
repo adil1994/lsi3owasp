@@ -5,6 +5,8 @@ session_start();
 if(!isset($_SESSION['login']))
     header('location:admin/login.php');
 
+
+
 if( strcmp($_SESSION['login'],'0')==0){
     header('location:admin/login.php');
 }
