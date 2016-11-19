@@ -65,11 +65,15 @@ catch(Exception $e) {
                             echo '<td>'.substr($article["contenu"], 0, 50).' ...</td>';
                     ?>
                             <td>
-                                <form method="POST" action="index.php">
+
+                                <form style="display: inline" method="POST" action="index.php">
                                     <input type="hidden" name="id_article" value="<?php echo $article["id_article"]?>" >
                                     <input onclick="deleteArticle(this)" class="btn btn-danger" name="delete" type="submit" value="delete">&nbsp;&nbsp;
-                                    <input class="btn btn-warning" name="edit" type="submit" value="edit">
                                 </form>
+                                <form style="display: inline" action="edit.php" method="GET" >
+                                    <a href="edit.php?id=<?php echo $article['id_article']; ?>" class="btn btn-warning">edit</a>
+                                </form>
+
                             </td>
                             </tr>
 
@@ -104,22 +108,23 @@ if(isset($_POST["id_article"])){
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 
-        function deleteArticle(caller){
-            $(caller).parent().submit(function () {
-                $.ajax({
-                    type: 'post',
-                    url: 'index.php',
-                    data: $(this).serialize(),
-                    success: function (result) {
-                        $(caller).parents('tr').fadeOut();
-                    },
-                    error : function(result){
-                        alert(result);
-                    },
-                });
-                return false;
+    function deleteArticle(caller){
+        $(caller).parent().submit(function () {
+            $.ajax({
+                type: 'post',
+                url: 'index.php',
+                data: $(this).serialize(),
+                success: function (result) {
+                    $(caller).parents('tr').fadeOut();
+                },
+                error : function(result){
+                    alert(result);
+                },
             });
-        }
+            return false;
+        });
+    }
+
 </script>
 
 
