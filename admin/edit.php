@@ -54,14 +54,7 @@ include("../includes/headeradmin.php");
                             // TODO edit content goes here
                             if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
                                 $query="update article set titre='".$_POST["title"]."',contenu='".$_POST["content"]."',image='".$_POST["image"]."',date_modification='".Date('Y-m-d h:m:s')."' where id_article=".$_POST['id_art'];
-                                echo $query;
-                                //$bdd->execute($query);
-                                // Prepare statement
-                                $stmt = $bdd->prepare($query);
-
-                                // execute the query
-                                $stmt->execute();
-
+                                $bdd->exec($query);
                             }
                         }
                         // high security
@@ -72,17 +65,16 @@ include("../includes/headeradmin.php");
 
                     if(isset($_GET['id']))
                     {
-                                // fetch data from database
-                                $query = "select * from article where id_article=".$_GET['id'];
-                                $article = $bdd->query($query);
-                                if($article->rowCount() == 1)
-                                {
-                                    $editedArticle = $article->fetch();
+                        // fetch data from database
+                        $query = "select * from article where id_article=".$_GET['id'];
+                        $article = $bdd->query($query);
+                        if($article->rowCount() == 1)
+                        {
+                            $editedArticle = $article->fetch();
                     ?>
                     <form class="form-horizontal" action="edit.php" method="post">
                         <input type="hidden" name="date_creation" value="<?php echo Date('Y-m-d h:m:s');?>">
                         <input type="hidden" name="id_art" value="<?php echo $editedArticle['id_article']; ?>">
-
 
                         <div class="form-group">
                             <label for="inputTitle" class="col-lg-2 control-label">Title :</label>
@@ -113,13 +105,13 @@ include("../includes/headeradmin.php");
 
                     </div>
                     <?php
-                                }else{
+                         }else{
                     ?>
-                            <div id="ERROR" class="alert alert-danger">
-                                <p>no article with this id !</p>
-                            </div>
+                        <div id="ERROR" class="alert alert-danger">
+                            <p>no article with this id !</p>
+                        </div>
                     <?php
-                                }
+                        }
                     }
                     ?>
 
