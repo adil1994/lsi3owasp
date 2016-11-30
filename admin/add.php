@@ -57,8 +57,10 @@ include("../includes/headeradmin.php");
 
                         // high security
                         if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 1 ){
-
-                            // TODO HIGHT SECURITY
+                            if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
+                                $query="INSERT INTO article (titre,contenu,image,date_creation,date_modification,id_auteur) VALUES ( '".$_POST["title"]."', '".$_POST["content"]."', '".$_POST["image"]."', '".Date("y-m-d H:m:s")."', '".Date("y-m-d H:m:s")."', '".$_SESSION["id_user"]."')";
+                                $bdd->query($query);
+                            }
                         }
 
                     ?>

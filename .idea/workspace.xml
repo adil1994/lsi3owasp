@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f509138b-3ad7-4219-9c3d-288213e89512" name="Default" comment="login an log out">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add.php" afterPath="$PROJECT_DIR$/admin/add.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit.php" afterPath="$PROJECT_DIR$/admin/edit.php" />
     </list>
     <ignored path="lsi3owasp.iws" />
@@ -25,26 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="4.0037594">
               <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1479512124992" expanded="true" signature="1602:1623" placeholder="select * fro... article" />
+                <marker date="1479512124992" expanded="true" signature="1858:1886" placeholder="..." />
+                <marker date="1479512124992" expanded="true" signature="3327:3364" placeholder="delete from " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.287594">
-              <caret line="72" column="42" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="42" />
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
               <folding>
-                <marker date="1480539594266" expanded="true" signature="1900:2087" placeholder="update artic... " />
-                <marker date="1480539594266" expanded="true" signature="1906:2087" placeholder="INSERT INTO article... " />
-                <marker date="1480539594266" expanded="true" signature="2552:2591" placeholder="select * fro... article" />
-                <marker date="1480539594266" expanded="true" signature="2910:2995" placeholder="..." />
+                <marker date="1480548486539" expanded="true" signature="1840:2027" placeholder="update artic... " />
+                <marker date="1480548486539" expanded="true" signature="1846:2027" placeholder="INSERT INTO article... " />
+                <marker date="1480548486539" expanded="true" signature="2414:2582" placeholder="update artic... " />
+                <marker date="1480548486539" expanded="true" signature="2862:2901" placeholder="select * fro... article" />
+                <marker date="1480548486539" expanded="true" signature="3220:3300" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -53,10 +59,11 @@
       <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="20" />
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding>
-                <marker date="1479492549623" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+                <marker date="1480548507929" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+                <marker date="1480548507929" expanded="true" signature="2497:2742" placeholder="INSERT INTO article... " />
               </folding>
             </state>
           </provider>
@@ -94,10 +101,10 @@
         <option value="$PROJECT_DIR$/admin/login.php" />
         <option value="$PROJECT_DIR$/admin/niveauDeSecurite.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/admin/add.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/admin/edit.php" />
+        <option value="$PROJECT_DIR$/admin/add.php" />
       </list>
     </option>
   </component>
@@ -344,7 +351,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1479512124992" expanded="true" signature="1602:1623" placeholder="select * fro... article" />
+            <marker date="1479512124992" expanded="true" signature="1858:1886" placeholder="..." />
+            <marker date="1479512124992" expanded="true" signature="3327:3364" placeholder="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -353,10 +364,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480539594266" expanded="true" signature="1900:2087" placeholder="update artic... " />
-            <marker date="1480539594266" expanded="true" signature="1906:2087" placeholder="INSERT INTO article... " />
-            <marker date="1480539594266" expanded="true" signature="2552:2591" placeholder="select * fro... article" />
-            <marker date="1480539594266" expanded="true" signature="2910:2995" placeholder="..." />
+            <marker date="1480548486539" expanded="true" signature="1840:2027" placeholder="update artic... " />
+            <marker date="1480548486539" expanded="true" signature="1846:2027" placeholder="INSERT INTO article... " />
+            <marker date="1480548486539" expanded="true" signature="2414:2582" placeholder="update artic... " />
+            <marker date="1480548486539" expanded="true" signature="2862:2901" placeholder="select * fro... article" />
+            <marker date="1480548486539" expanded="true" signature="3220:3300" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -366,7 +378,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="20" />
           <folding>
-            <marker date="1479492549623" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+            <marker date="1480548507929" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+            <marker date="1480548507929" expanded="true" signature="2497:2742" placeholder="INSERT INTO article... " />
           </folding>
         </state>
       </provider>
@@ -403,7 +416,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1479512124992" expanded="true" signature="1602:1623" placeholder="select * fro... article" />
+            <marker date="1479512124992" expanded="true" signature="1858:1886" placeholder="..." />
+            <marker date="1479512124992" expanded="true" signature="3327:3364" placeholder="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -432,7 +449,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
+          <folding>
+            <marker date="1479512124992" expanded="true" signature="1602:1623" placeholder="select * fro... article" />
+            <marker date="1479512124992" expanded="true" signature="1858:1886" placeholder="..." />
+            <marker date="1479512124992" expanded="true" signature="3327:3364" placeholder="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -447,6 +468,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -477,7 +499,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479492549623" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+            <marker date="1480548507929" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+            <marker date="1480548507929" expanded="true" signature="2497:2742" placeholder="INSERT INTO article... " />
           </folding>
         </state>
       </provider>
@@ -593,6 +616,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -607,14 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4473684">
           <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/backup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1184211">
-          <caret line="95" column="57" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,31 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/press.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60150373">
-          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="20" />
-          <folding>
-            <marker date="1479492549623" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38418078">
@@ -699,15 +690,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/press.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.40601504">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.287594">
-          <caret line="72" column="42" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="42" />
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
           <folding>
-            <marker date="1480539594266" expanded="true" signature="1900:2087" placeholder="update artic... " />
-            <marker date="1480539594266" expanded="true" signature="1906:2087" placeholder="INSERT INTO article... " />
-            <marker date="1480539594266" expanded="true" signature="2552:2591" placeholder="select * fro... article" />
-            <marker date="1480539594266" expanded="true" signature="2910:2995" placeholder="..." />
+            <marker date="1480548486539" expanded="true" signature="1840:2027" placeholder="update artic... " />
+            <marker date="1480548486539" expanded="true" signature="1846:2027" placeholder="INSERT INTO article... " />
+            <marker date="1480548486539" expanded="true" signature="2414:2582" placeholder="update artic... " />
+            <marker date="1480548486539" expanded="true" signature="2862:2901" placeholder="select * fro... article" />
+            <marker date="1480548486539" expanded="true" signature="3220:3300" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/backup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9849624">
+          <caret line="95" column="57" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <marker date="1480548507929" expanded="true" signature="1862:2107" placeholder="INSERT INTO article... " />
+            <marker date="1480548507929" expanded="true" signature="2497:2742" placeholder="INSERT INTO article... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0037594">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <marker date="1479512124992" expanded="true" signature="1602:1623" placeholder="select * fro... article" />
+            <marker date="1479512124992" expanded="true" signature="1858:1886" placeholder="..." />
+            <marker date="1479512124992" expanded="true" signature="3327:3364" placeholder="delete from " />
           </folding>
         </state>
       </provider>

@@ -50,8 +50,6 @@ include("../includes/headeradmin.php");
                         // low security
                         if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 0 ){
 
-
-                            // TODO edit content goes here
                             if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
                                 $query="update article set titre='".$_POST["title"]."',contenu='".$_POST["content"]."',image='".$_POST["image"]."',date_modification='".Date('Y-m-d h:m:s')."' where id_article=".$_POST['id_art'];
                                 $bdd->exec($query);
@@ -60,7 +58,10 @@ include("../includes/headeradmin.php");
                         // high security
                         if(isset($_SESSION["niveau"]) && $_SESSION["niveau"] == 1 ){
 
-                            // TODO HIGHT SECURITY
+                            if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["image"]) ){
+                                $query="update article set titre='".$_POST["title"]."',contenu='".$_POST["content"]."',image='".$_POST["image"]."',date_modification='".Date('Y-m-d h:m:s')."' where id_article=".$_POST['id_art'];
+                                $bdd->exec($query);
+                            }
                         }
 
                     if(isset($_GET['id']))
